@@ -33,7 +33,7 @@ const bracket = document.querySelector(".bracket");
 const bambooLeft = document.querySelectorAll(".bamboo-left");
 const blackLeft = document.querySelectorAll(".black-left");
 const specialLeft = document.querySelectorAll(".special-left");
-const leftData = document.querySelectorAll("#left-data");
+const leftData = document.querySelectorAll(".left-data");
 
 // Values
 let amount = 37580;
