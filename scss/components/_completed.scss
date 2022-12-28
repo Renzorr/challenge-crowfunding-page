@@ -1,0 +1,70 @@
+.completed-modal {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  background-color: $white;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 50px 25px;
+  width: 500px;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+
+  img {
+    width: 20%;
+    padding-bottom: 25px;
+  }
+
+  h4 {
+    font-size: 23px;
+    padding-bottom: 20px;
+  }
+
+  p {
+    color: $dark-gray;
+    line-height: 30px;
+    padding-bottom: 25px;
+  }
+
+  .completed-btn {
+    font-weight: 500;
+    background-color: $doderate-cyan;
+    color: $white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      background-color: $dark-cyan;
+    }
+  }
+}
+
+.completed-modal.active {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+  top: 50%;
+}
+
+.blur {
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+  transition: 0.5s;
+}
+
+.blur.inactive {
+  filter: blur(0);
+  pointer-events: inherit;
+  user-select: inherit;
+}

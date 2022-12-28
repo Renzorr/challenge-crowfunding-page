@@ -1,0 +1,111 @@
+@media (max-width: 950px) {
+  .header {
+    padding-inline: 70px;
+    background-image: url(../images/image-hero-mobile.jpg);
+    .header_items {
+      align-items: flex-start;
+      flex-direction: column;
+      background-color: $white;
+      color: $dark-gray;
+      box-shadow: 0 0 2px rgb(0 0 0 / 54%);
+      position: fixed;
+      width: 65vw;
+      top: 120px;
+      font-weight: 500;
+      padding: 30px;
+      border-radius: 10px;
+      visibility: hidden;
+      opacity: 0;
+
+      left: 30%;
+      transition: 0.5s;
+      margin: 20px;
+    }
+
+    .header_items.active {
+      visibility: visible;
+      opacity: 1;
+      left: 10%;
+    }
+
+    .hamburger {
+      display: inherit;
+      cursor: pointer;
+      z-index: 999;
+    }
+  }
+
+  .top {
+    margin-inline: 20px;
+    text-align: center;
+    padding-inline: 30px;
+
+    .mark {
+      width: auto;
+
+      .mark-text {
+        display: none;
+      }
+    }
+  }
+
+  .middle {
+    margin-inline: 20px;
+    padding-inline: 30px !important;
+
+    .crow_data {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+
+      .data_border {
+        border-right: none !important;
+        border-bottom: 1px solid rgb(0 0 0 / 8%);
+        padding-bottom: 25px;
+        width: 100%;
+      }
+    }
+  }
+
+  .bottom {
+    margin-inline: 20px;
+    padding-inline: 30px !important;
+
+    .card_section {
+      .bottom_card {
+        .card_top {
+          align-items: flex-start !important;
+          flex-direction: column;
+          gap: 10px;
+          padding-bottom: 12px !important;
+        }
+
+        .card_bottom {
+          flex-direction: column;
+          align-items: flex-start !important;
+          gap: 10px;
+        }
+      }
+    }
+  }
+
+  .completed-modal {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .plan-modal {
+    margin-inline: 20px;
+    left: 45%;
+
+    .plan-card {
+      .plan-top {
+        .plan-top-left {
+          align-items: flex-start !important;
+          flex-direction: column;
+          gap: 0 !important;
+        }
+      }
+    }
+  }
+}

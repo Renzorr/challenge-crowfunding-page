@@ -1,0 +1,74 @@
+.top {
+  margin-top: -100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $white;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.137);
+  border-radius: 10px;
+  padding-inline: 50px;
+
+  .top-logo {
+    margin-top: -30px;
+  }
+
+  h1 {
+    font-size: 25px;
+    padding-block: 25px 20px;
+  }
+
+  p {
+    font-size: 16px;
+    color: $dark-gray;
+    padding-bottom: 30px;
+  }
+
+  .top_btn_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 40px;
+  }
+
+  .btn-plan {
+    font-weight: 500;
+    background-color: $doderate-cyan;
+    color: $white;
+    padding: 18px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      background-color: $dark-cyan;
+    }
+  }
+
+  .mark {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    gap: 15px;
+    width: 182px;
+    color: $dark-gray;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &.active {
+      color: $doderate-cyan;
+      circle {
+        fill: $doderate-cyan;
+      }
+
+      path {
+        fill: $white;
+      }
+    }
+  }
+}

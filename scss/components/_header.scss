@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url(../images/image-hero-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-block: 50px 340px;
+  padding-inline: 160px;
+  box-shadow: inset 0 0 15rem rgb(0, 0, 0);
+
+  .header_items {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    color: $white;
+  }
+
+  .hamburger{
+    display: none;
+  }
+}

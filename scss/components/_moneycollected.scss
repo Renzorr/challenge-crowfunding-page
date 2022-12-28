@@ -1,0 +1,51 @@
+.middle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.137);
+  border-radius: 10px;
+  padding: 40px 50px 60px;
+  margin-block: 40px;
+  background-color: $white;
+
+  .crow_data {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    padding-bottom: 40px;
+
+    .data {
+      h2 {
+        font-size: 35px;
+        padding-bottom: 5px;
+      }
+
+      span {
+        font-size: 16px;
+        color: $dark-gray;
+      }
+    }
+
+    .data_border {
+      border-right: 2px solid rgba(0, 0, 0, 0.075);
+      padding-right: 40px;
+    }
+  }
+
+  .bar {
+    width: 100%;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.075);
+    height: 12px;
+    overflow: hidden;
+
+    .bar_content {
+      background-color: $doderate-cyan;
+      width: 37%;
+      border-radius: 30px;
+      height: 100%;
+      transition: 0.5s;
+    }
+  }
+}
