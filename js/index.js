@@ -38,23 +38,37 @@ const leftData = document.querySelectorAll(".left-data");
 // Values
 let amount = 37580;
 let brackets = 5007;
-let bambleft = 101;
-let blaleft = 64;
-let speleft = 2;
+let bambLeft = 101;
+let blaLeft = 64;
+let speLeft = 2;
 
 // Udpate the brackets when it gets selected
 const updateData = () => {
   amountTotal.innerHTML = `$${amount}`;
   bracket.innerHTML = `${brackets}`;
+
   bambooLeft.forEach((e) => {
-    e.innerHTML = `${bambleft}`;
+    e.innerHTML = `${bambLeft}`;
   });
   blackLeft.forEach((e) => {
-    e.innerHTML = `${blaleft}`;
+    e.innerHTML = `${blaLeft}`;
   });
   specialLeft.forEach((e) => {
-    e.innerHTML = `${speleft}`;
+    e.innerHTML = `${speLeft}`;
   });
+};
+
+const activePlan = (index) => {
+  planTop[index].classList.add("active");
+  pledgeSection[index].classList.add("active");
+  planCard[index].classList.add("active");
+  planCard[index].scrollIntoView();
+};
+
+const desactivePlan = (index) => {
+  planTop[index].classList.remove("active");
+  pledgeSection[index].classList.remove("active");
+  planCard[index].classList.remove("active");
 };
 
 // Add active state to a selected plan
@@ -62,49 +76,24 @@ const openPlan = () => {
   rewardBtns.forEach((e, i) => {
     e.addEventListener("click", () => {
       if (e.value == 1) {
-        planTop[i].classList.add("active");
-        pledgeSection[i].classList.add("active");
-        planCard[i].classList.add("active");
-        planCard[i].scrollIntoView();
-
-        planTop[i + 1].classList.remove("active");
-        pledgeSection[i + 1].classList.remove("active");
-        planCard[i + 1].classList.remove("active");
-
-        planTop[i + 2].classList.remove("active");
-        pledgeSection[i + 2].classList.remove("active");
-        planCard[i + 2].classList.remove("active");
+        activePlan(i);
+        desactivePlan(i + 1);
+        desactivePlan(i + 2);
       }
 
       if (e.value == 2) {
-        planTop[i].classList.add("active");
-        pledgeSection[i].classList.add("active");
-        planCard[i].classList.add("active");
-
-        planTop[i + 1].classList.remove("active");
-        pledgeSection[i + 1].classList.remove("active");
-        planCard[i + 1].classList.remove("active");
-
-        planTop[i - 1].classList.remove("active");
-        pledgeSection[i - 1].classList.remove("active");
-        planCard[i - 1].classList.remove("active");
-
-        planCard[i].scrollIntoView();
+        activePlan(i);
+        desactivePlan(i + 1);
+        desactivePlan(i - 1);
       }
 
       if (e.value == 3) {
-        planTop[i - 1].classList.remove("active");
-        pledgeSection[i - 1].classList.remove("active");
-        planCard[i - 1].classList.remove("active");
-
-        planTop[i].classList.add("active");
-        pledgeSection[i].classList.add("active");
-        planCard[i].classList.add("active");
-        planCard[i].scrollIntoView();
+        activePlan(i);
+        desactivePlan(i - 1);
       }
 
       planModal.classList.add("active");
-      mainContainer.classList.remove("inactive");
+      mainContainer.classList.toggle("inactive");
     });
   });
 };
@@ -113,6 +102,7 @@ const openPlan = () => {
 const bookmarkState = () => {
   markBtn.addEventListener("click", () => {
     markBtn.classList.toggle("active");
+
     if (markBtn.classList.contains("active")) {
       markBtnText.innerHTML = "Bookmarked";
     } else {
@@ -124,16 +114,16 @@ const bookmarkState = () => {
 // Close Modal
 const closePlan = () => {
   closeModal.addEventListener("click", () => {
-    planModal.classList.remove("active");
-    mainContainer.classList.add("inactive");
+    planModal.classList.toggle("active");
+    mainContainer.classList.toggle("inactive");
   });
 };
 
 // Success card
 const SuccessCard = () => {
   completedBtn.addEventListener("click", () => {
-    completedCard.classList.remove("active");
-    mainContainer.classList.add("inactive");
+    completedCard.classList.toggle("active");
+    mainContainer.classList.toggle("inactive");
   });
 };
 
@@ -148,6 +138,19 @@ const planChecked = () => {
   });
 };
 
+//update Crowdfund data
+const updateCrowdData = (donation) => {
+  amount = amount + donation;
+  brackets++;
+  if (donation === 25) {
+    bambLeft--;
+  } else if (donation === 75) {
+    blaLeft--;
+  } else {
+    speLeft--;
+  }
+};
+
 // Change total amount and brackets
 const selectPlan = () => {
   btnContinue.forEach((e) => {
@@ -155,19 +158,13 @@ const selectPlan = () => {
       planModal.classList.remove("active");
       completedCard.classList.add("active");
       if (e.value == 1) {
-        amount = amount + 25;
-        brackets++;
-        bambleft--;
+        updateCrowdData(25);
       }
       if (e.value == 2) {
-        amount = amount + 75;
-        brackets++;
-        blaleft--;
+        updateCrowdData(75);
       }
       if (e.value == 3) {
-        amount = amount + 200;
-        brackets++;
-        speleft--;
+        updateCrowdData(200);
       }
 
       barIncrease();

@@ -76,6 +76,17 @@ select {
   gap: 60px;
   color: #fff;
 }
+.header .header_items li {
+  padding-bottom: 8px;
+  background: linear-gradient(currentColor 0 0) var(--d, 201%) 100%/200% 2px no-repeat;
+  transition: 0.8s;
+}
+@media (hover: hover) {
+  .header .header_items li:hover {
+    --d: -101%;
+    transition: 0.5s;
+  }
+}
 .header .hamburger {
   display: none;
 }
@@ -99,7 +110,7 @@ select {
 }
 .top p {
   font-size: 16px;
-  color: hsl(0deg, 0%, 48%);
+  color: hsl(0, 0%, 48%);
   padding-bottom: 30px;
 }
 .top .top_btn_section {
@@ -119,7 +130,7 @@ select {
   transition: 0.4s;
 }
 .top .btn-plan:hover {
-  background-color: hsl(176deg, 72%, 28%);
+  background-color: hsl(176, 72%, 28%);
 }
 .top .mark {
   display: flex;
@@ -127,7 +138,7 @@ select {
   font-weight: 500;
   gap: 15px;
   width: 182px;
-  color: hsl(0deg, 0%, 48%);
+  color: hsl(0, 0%, 48%);
   border-radius: 30px;
   cursor: pointer;
   transition: 0.5s;
@@ -154,7 +165,7 @@ select {
     align-items: flex-start;
     flex-direction: column;
     background-color: #fff;
-    color: hsl(0deg, 0%, 48%);
+    color: hsl(0, 0%, 48%);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.54);
     position: fixed;
     width: 65vw;
@@ -256,7 +267,7 @@ select {
 }
 .middle .crow_data .data span {
   font-size: 16px;
-  color: hsl(0deg, 0%, 48%);
+  color: hsl(0, 0%, 48%);
 }
 .middle .crow_data .data_border {
   border-right: 2px solid rgba(0, 0, 0, 0.075);
@@ -299,7 +310,7 @@ select {
 .bottom .bottom_content p {
   font-size: 16px;
   line-height: 30px;
-  color: hsl(0deg, 0%, 48%);
+  color: hsl(0, 0%, 48%);
 }
 .bottom .card_section {
   display: flex;
@@ -327,7 +338,7 @@ select {
 }
 .bottom .card_section .bottom_card .card_middle {
   line-height: 30px;
-  color: hsl(0deg, 0%, 48%);
+  color: hsl(0, 0%, 48%);
   padding-bottom: 20px;
 }
 .bottom .card_section .bottom_card .card_bottom {
@@ -345,7 +356,7 @@ select {
   font-weight: bold;
 }
 .bottom .card_section .bottom_card .card_bottom .quantity span {
-  color: hsl(0deg, 0%, 48%);
+  color: hsl(0, 0%, 48%);
 }
 .bottom .card_section .bottom_card .card_bottom .reward {
   font-weight: 500;
@@ -357,7 +368,7 @@ select {
   transition: 0.4s;
 }
 .bottom .card_section .bottom_card .card_bottom .reward:hover {
-  background-color: hsl(176deg, 72%, 28%);
+  background-color: hsl(176, 72%, 28%);
 }
 
 .bottom_card.disabled {
@@ -405,7 +416,7 @@ select {
   cursor: pointer;
 }
 .plan-modal .plan-content {
-  color: hsl(0deg, 0%, 48%);
+  color: hsl(0, 0%, 48%);
   font-size: 16px;
   padding-block: 20px 40px;
 }
@@ -420,7 +431,7 @@ select {
   padding: 30px 25px;
 }
 .plan-modal .plan-card p {
-  color: hsl(0deg, 0%, 48%);
+  color: hsl(0, 0%, 48%);
   line-height: 30px;
   padding-bottom: 35px;
 }
@@ -507,13 +518,13 @@ select {
   padding-block: 40px;
 }
 .plan-modal .plan-card .pledge-section span {
-  color: hsl(0deg, 0%, 48%);
+  color: hsl(0, 0%, 48%);
 }
 .plan-modal .plan-card .pledge-section input {
   padding: 18px 20px;
   border-radius: 30px;
   border: 1px solid rgba(0, 0, 0, 0.09);
-  color: hsl(0deg, 0%, 48%);
+  color: hsl(0, 0%, 48%);
   font-weight: 500;
 }
 .plan-modal .plan-card .pledge-section input:focus {
@@ -529,7 +540,7 @@ select {
   transition: 0.4s;
 }
 .plan-modal .plan-card .pledge-section .btn-continue:hover {
-  background-color: hsl(176deg, 72%, 28%);
+  background-color: hsl(176, 72%, 28%);
 }
 .plan-modal .plan-card .pledge-section .btn-continue.only {
   width: 100%;
@@ -578,7 +589,7 @@ select {
   padding-bottom: 20px;
 }
 .completed-modal p {
-  color: hsl(0deg, 0%, 48%);
+  color: hsl(0, 0%, 48%);
   line-height: 30px;
   padding-bottom: 25px;
 }
@@ -592,7 +603,7 @@ select {
   transition: 0.4s;
 }
 .completed-modal .completed-btn:hover {
-  background-color: hsl(176deg, 72%, 28%);
+  background-color: hsl(176, 72%, 28%);
 }
 
 .completed-modal.active {

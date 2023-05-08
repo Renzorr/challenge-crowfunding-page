@@ -14,9 +14,23 @@
     align-items: center;
     gap: 60px;
     color: $white;
+
+    li {
+      padding-bottom: 8px;
+      background: linear-gradient(currentColor 0 0) var(--d, 201%) 100% /200% 2px
+        no-repeat;
+      transition: 0.8s;
+
+      @media (hover: hover) {
+        &:hover {
+          --d: -101%;
+          transition: 0.5s;
+        }
+      }
+    }
   }
 
-  .hamburger{
+  .hamburger {
     display: none;
   }
 }
